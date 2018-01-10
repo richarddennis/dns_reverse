@@ -10,6 +10,9 @@ CHANGE VARIABLE NAME OF SERVER
 ```sh
 pip install pyasn --pre
 
+pyasn_util_download.py --latest
+
+
 
 git clone https://github.com/richarddennis/dns_reverse.git
 
