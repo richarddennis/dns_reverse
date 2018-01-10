@@ -29,7 +29,7 @@ with open(ip_name_formatted, 'r') as f, open(dns_records, 'w') as n:
     for line in f:
         #print line.strip()
         if line.strip() == "0.0.0.0":
-            print "Invalid"
+            pass
         else:
             command2 = "dig -x " +line.strip()+" +short"
             # dns_result = os.system(command2)
