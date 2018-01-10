@@ -3,6 +3,8 @@ import os
 import re
 import sys
 import subprocess
+import pyasn
+
 yesterday = (datetime.datetime.now() - datetime.timedelta(days = 1)).strftime("%Y-%m-%d")
 file_name = "netstat_data_relay_BHost_one_"+yesterday+".json"
 ip_name = "netstat_data_relay_BHost_one_"+yesterday+".txt"
@@ -37,5 +39,22 @@ with open(ip_name_formatted, 'r') as f, open(dns_records, 'w') as n:
             # print output
             if output != "":
                 n.write(output)
+            # sys.exit()
+        # n.write(new_line+'\n')
+
+asn_records = "netstat_data_relay_BHost_one_"+yesterday+"_asn_records.txt"
+
+with open(ip_name_formatted, 'r') as f, open(asn_records, 'w') as n:
+    asndb = pyasn.pyasn('ipasn_20140513.dat')
+    for line in f:
+        #print line.strip()
+        if line.strip() == "0.0.0.0":
+            pass
+        else:
+            output = asndb.lookup(line.strip())
+            # print output
+            # print type(output)
+            # print output[0]
+            n.write(str(output[0])+'\n')
             # sys.exit()
         # n.write(new_line+'\n')
