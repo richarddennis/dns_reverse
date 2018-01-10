@@ -35,7 +35,7 @@ with open(ip_name_formatted, 'r') as f, open(dns_records, 'w') as n:
             # dns_result = os.system(command2)
             output = subprocess.check_output(command2, shell=True)
             # print output
-            if ououtput != "":
+            if output != "":
                 n.write(output)
             # sys.exit()
         # n.write(new_line+'\n')
