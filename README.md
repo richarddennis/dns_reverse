@@ -8,6 +8,8 @@ CHANGE VARIABLE NAME OF SERVER
 
 
 ```sh
+sudo apt-get install dnsutils
+
 pip install pyasn --pre
 
 pyasn_util_download.py --latest
