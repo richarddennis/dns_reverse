@@ -27,20 +27,20 @@ import pyasn
 input_data_file = "no_dup_ip.txt"
 dns_records = "netstat_data_all_bridges_dns_records.txt"
 
-with open(input_data_file, 'r') as f, open(dns_records, 'w') as n:
-    for line in f:
+#with open(input_data_file, 'r') as f, open(dns_records, 'w') as n:
+#    for line in f:
         #print line.strip()
-        if line.strip() == "0.0.0.0":
-            pass
-        else:
-            command2 = "dig -x " +line.strip()+" +short"
-            # dns_result = os.system(command2)
-            output = subprocess.check_output(command2, shell=True)
-            # print output
-            if output != "":
-                n.write(output)
-            # sys.exit()
-        # n.write(new_line+'\n')
+#        if line.strip() == "0.0.0.0":
+#            pass
+#        else:
+#            command2 = "dig -x " +line.strip()+" +short"
+#            # dns_result = os.system(command2)
+#            output = subprocess.check_output(command2, shell=True)
+#            # print output
+#            if output != "":
+#                n.write(output)
+#            # sys.exit()
+#        # n.write(new_line+'\n')
 
 asn_records = "netstat_data_all_bridges_asn_records.txt"
 
